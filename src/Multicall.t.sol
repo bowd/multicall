@@ -44,7 +44,7 @@ contract MulticallTest is DSTest, Multicall {
         _calls[0].target = address(storeA);
         _calls[0].callData = abi.encodeWithSignature("get()");
 
-        (, Return[] memory _returnData) = aggregate(_calls, true);
+        (,, Return[] memory _returnData) = aggregate(_calls, true);
 
         bytes memory _word = _returnData[0].data;
         bool _success = _returnData[0].success;
@@ -65,7 +65,7 @@ contract MulticallTest is DSTest, Multicall {
         _calls[1].target = address(storeB);
         _calls[1].callData = abi.encodeWithSignature("get()");
 
-        (, Return[] memory _returnData) = aggregate(_calls, true);
+        (,, Return[] memory _returnData) = aggregate(_calls, true);
 
         bool _successA = _returnData[0].success;
         bool _successB = _returnData[1].success;
@@ -89,7 +89,7 @@ contract MulticallTest is DSTest, Multicall {
         _calls[0].target = address(storeA);
         _calls[0].callData = abi.encodeWithSignature("getAdd(uint256)", 1);
 
-        (, Return[] memory _returnData) = aggregate(_calls, true);
+        (,, Return[] memory _returnData) = aggregate(_calls, true);
 
         bytes memory _word = _returnData[0].data;
         bool _success = _returnData[0].success;
@@ -110,7 +110,7 @@ contract MulticallTest is DSTest, Multicall {
         _calls[1].target = address(storeB);
         _calls[1].callData = abi.encodeWithSignature("getAdd(uint256)", 1);
 
-        (, Return[] memory _returnData) = aggregate(_calls, true);
+        (,, Return[] memory _returnData) = aggregate(_calls, true);
 
         bool _successA = _returnData[0].success;
         bool _successB = _returnData[1].success;
@@ -134,7 +134,7 @@ contract MulticallTest is DSTest, Multicall {
         _calls[0].target = address(storeA);
         _calls[0].callData = abi.encodeWithSignature("getAnd10()");
 
-        (, Return[] memory _returnData) = aggregate(_calls, true);
+        (,, Return[] memory _returnData) = aggregate(_calls, true);
 
         bool _success = _returnData[0].success;
         bytes memory _words = _returnData[0].data;
@@ -165,7 +165,7 @@ contract MulticallTest is DSTest, Multicall {
         _calls[0].target = address(storeA);
         _calls[0].callData = abi.encodeWithSignature("getFailing()");
 
-        (, Return[] memory _returnData) = aggregate(_calls, false);
+        (,, Return[] memory _returnData) = aggregate(_calls, false);
 
         bool _success = _returnData[0].success;
         bytes memory _words = _returnData[0].data;
@@ -184,7 +184,7 @@ contract MulticallTest is DSTest, Multicall {
         _calls[1].target = address(storeB);
         _calls[1].callData = abi.encodeWithSignature("getAdd(uint256)", 1);
 
-        (, Return[] memory _returnData) = aggregate(_calls, false);
+        (,, Return[] memory _returnData) = aggregate(_calls, false);
 
         bool _successA = _returnData[0].success;
         bytes memory _wordA = _returnData[0].data;

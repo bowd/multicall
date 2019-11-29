@@ -5,6 +5,7 @@ pragma experimental ABIEncoderV2;
 /// @author Michael Elliot <mike@makerdao.com>
 /// @author Joshua Levine <joshua@makerdao.com>
 /// @author Nick Johnson <arachnid@notdot.net>
+/// @author Bogdan Dumitru <bogdan@bowd.io>
 
 contract Multicall {
     struct Call {
@@ -16,8 +17,9 @@ contract Multicall {
       bytes data;
 
     }
-    function aggregate(Call[] memory calls, bool strict) public returns (uint256 blockNumber, Return[] memory returnData) {
+    function aggregate(Call[] memory calls, bool strict) public returns (uint256 blockNumber, bytes32 blockHash, Return[] memory returnData) {
         blockNumber = block.number;
+        blockHash = blockhash(block.number);
         returnData = new Return[](calls.length);
         for(uint256 i = 0; i < calls.length; i++) {
             (bool success, bytes memory ret) = calls[i].target.call(calls[i].callData);
