@@ -1,22 +1,11 @@
-# Multicall <img width="100" align="right" alt="Multicall" src="https://user-images.githubusercontent.com/304108/55666937-320cb180-5888-11e9-907b-48ba66150523.png" />
+# NonStrictMulticall
 
-Multicall aggregates results from multiple contract constant function calls.
+*NonStrictMulticall* is a fork of Maker DAO's [Multicall](https://github.com/makerdao/multicall) which extends it in order to not fail when one of the component calls fails and to also return the exit status of each component call in conjunction with the returned value.
 
-This reduces the number of separate JSON RPC requests that need to be sent
-(especially useful if using remote nodes like Infura), while also providing the
-guarantee that all values returned are from the same block (like an atomic read)
-and returning the block number the values are from (giving them important
-context so that results from old blocks can be ignored if they're from an
-out-of-date node).
-
-For use in front-end dapps, this smart contract is intended to be used with
-[Multicall.js](https://github.com/makerdao/multicall.js).
+This contract can be used in conjuction with the `Multicall` package [web3-go](https://github.com/Alethio/web3-go)
 
 ### Contract Addresses
 | Chain   | Address |
 | ------- | ------- |
-| Mainnet | [0xeefba1e63905ef1d7acba5a8513c70307c1ce441](https://etherscan.io/address/0xeefba1e63905ef1d7acba5a8513c70307c1ce441#contracts) |
-| Kovan   | [0x2cc8688c5f75e365aaeeb4ea8d6a480405a48d2a](https://kovan.etherscan.io/address/0x2cc8688c5f75e365aaeeb4ea8d6a480405a48d2a#contracts) |
-| Rinkeby | [0x42ad527de7d4e9d9d011ac45b31d8551f8fe9821](https://rinkeby.etherscan.io/address/0x42ad527de7d4e9d9d011ac45b31d8551f8fe9821#contracts) |
-| Görli   | [0x77dca2c955b15e9de4dbbcf1246b4b85b651e50e](https://goerli.etherscan.io/address/0x77dca2c955b15e9de4dbbcf1246b4b85b651e50e#contracts) |
-| xDai    | [0xb5b692a88bdfc81ca69dcb1d924f59f0413a602a](https://blockscout.com/poa/dai/address/0xb5b692a88bdfc81ca69dcb1d924f59f0413a602a) |
+| Mainnet | [0xf3ad7e31b052ff96566eedd218a823430e74b406](https://etherscan.io/address/0xf3ad7e31b052ff96566eedd218a823430e74b406#contracts) |
+| Ropsten   | [0x5eb3fa2dfecdde21c950813c665e9364fa609bd2](https://ropsten.etherscan.io/address/0x5eb3fa2dfecdde21c950813c665e9364fa609bd2#contracts) |
