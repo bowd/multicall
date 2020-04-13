@@ -9,3 +9,4 @@ This contract can be used in conjuction with the `Multicall` package [web3-go](h
 | ------- | ------- |
 | Mainnet | [0x5eb3fa2dfecdde21c950813c665e9364fa609bd2](https://etherscan.io/address/0x5eb3fa2dfecdde21c950813c665e9364fa609bd2#contracts) |
 | Ropsten | [0xf3ad7e31b052ff96566eedd218a823430e74b406](https://ropsten.etherscan.io/address/0xf3ad7e31b052ff96566eedd218a823430e74b406#contracts) |
+| Kovan | [0x34063466af03ce5608f55f0345c987ede54db03e](https://kovan.etherscan.io/address/0x34063466af03ce5608f55f0345c987ede54db03e#contracts) |
