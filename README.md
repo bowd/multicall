@@ -2,7 +2,7 @@
 
 *NonStrictMulticall* is a fork of Maker DAO's [Multicall](https://github.com/makerdao/multicall) which extends it in order to not fail when one of the component calls fails and to also return the exit status of each component call in conjunction with the returned value.
 
-This contract can be used in conjuction with the `Multicall` package [web3-go](https://github.com/Alethio/web3-go)
+This contract can be used in conjuction with the `Multicall` package [web3-multicall-go](https://github.com/Alethio/web3-multicall-go)
 
 ### Contract Addresses
 | Chain   | Address |
